@@ -1,11 +1,17 @@
 body {
-    background-color: #FED9E9; /* Mimi Pink background */
+    background-color: #FED9E9;
     font-family: 'Comic Sans MS', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;   
     margin: 0;
+    padding: 20px;      
+
+    background-image: url('images/barbie-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; 
 }
 
 .container {
@@ -15,40 +21,36 @@ body {
     border: 5px solid #FF9FD6;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     text-align: center;
-    width: 350px;
-}
-
-h1 { color: #e6549d; }
-
-input, textarea {
     width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #FEBDE2;
-    border-radius: 10px;
+    max-width: 350px;
+    box-sizing: border-box;
 }
 
 button {
-    background-color: #e6549d; /* Barbie Fuchsia */
+    background-color: #e6549d;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
+    width: 100%;             
+    max-width: 250px;        
+    box-sizing: border-box;   
 }
 
-button:hover { background-color: #FF9FD6; }
+button:hover {
+    background-color: #FF9FD6;
+}
 
-.hidden { display: none; }
-.logout-btn { background-color: #C693EC; margin-top: 20px; }
-body {
-    /* Replace with your image file path */
-    background-image: url('images/barbie-bg.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+.hidden {
+    display: none;
+}
+
+.logout-btn {
+    background-color: #C693EC;
+    margin-top: 20px;
 }
 
 .diary-options {
@@ -56,13 +58,15 @@ body {
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
+    flex-wrap: wrap;  
 }
 
 .book {
-    width: 100px;
+    width: 100%;
+    max-width: 100px;
     height: 140px;
     background: #e6549d;
-    border-radius: 5px 15px 15px 5px; /* Makes it look like a book spine */
+    border-radius: 5px 15px 15px 5px;
     border-left: 8px solid #b33973;
     color: white;
     font-weight: bold;
@@ -75,9 +79,32 @@ body {
     padding: 10px;
     text-align: center;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
 .book:hover {
     transform: scale(1.1) rotate(-3deg);
     background: #FF9FD6;
 }
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .book {
+        max-width: 80px;
+        height: 120px;
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+
+   
+  
+   
