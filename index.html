@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Dream Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="container">
+    <h1 id="auth-title">💖 Barbie Login 💖</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="auth-btn" onclick="handleAuth()">Login</button>
+    <p id="toggle-link" onclick="toggleAuth()" style="cursor:pointer; color:#e6549d; font-size:12px; margin-top:10px;">
+        New here? Sign Up
+    </p>
+</div>
+
+<!-- Inside entry-area, update the secret-lock div -->
+<div id="secret-lock" class="hidden">
+    <p id="lock-msg" style="color:#e6549d;"></p>
+    <input type="password" id="secret-code" placeholder="****">
+    <button onclick="unlockSecret()">Enter</button>
+</div>
+
+    <!-- Main Diary Dashboard -->
+    <div id="diary-dashboard" class="container hidden">
+        <h1 id="welcome-msg">Welcome, Barbie!</h1>
+        <div class="diary-options">
+    <div class="book" onclick="openDiary('secret')">Secret Diary</div>
+    <div class="book" onclick="openDiary('daily')">Daily Routine</div>
+    <div class="book" onclick="openDiary('goals')">Daily Goals</div>
+</div>
+
+        <!-- Diary Entry Area -->
+        <div id="entry-area" class="hidden">
+            <h2 id="diary-title">Diary Name</h2>
+            <div id="secret-lock" class="hidden">
+                <input type="password" id="secret-code" placeholder="Enter Secret Code">
+                <button onclick="unlockSecret()">Unlock</button>
+            </div>
+            <div id="diary-content" class="hidden">
+                <textarea id="diary-text" placeholder="Write your heart out..."></textarea>
+                <button onclick="saveEntry()">Save Entry</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
